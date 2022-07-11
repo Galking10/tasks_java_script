@@ -1,424 +1,317 @@
-// const Manager = function(name, sales){
-//     this.name = name
-//     this.sales = sales
-// }
+// const numbers = [5, 10, 15, 20, 25, 30]
 
-// Manager.prototype.sell = function(){
-//     this.sales +=1
-// }
-
-// const mango = new Manager('Mango', 5)
-
-// console.dir(mango)
-
-// mango.sell()
-
-// console.log(mango)
-
-// const Hero = function (name, xp) {
-//   this.name = name;
-//   this.xp = xp;
-// };
-
-// Hero.description = "this is a Hero base class"
-
-// Hero.showStats = function(hero){
-//     console.log('logging stats: ', hero)
-// }
-// Hero.showStats('Mango')
-// Hero.prototype.changeName = function (name) {
-//   this.name = name;
-// };
-
-// const mango = new Hero('Mango', '1000');
-
-// console.log(mango);
-
-// class Hero{
-
-//     static showStats(hero){
-//         console.log('Show ', hero)
-//     }
-//     constructor(name, xp){
-//         this._name = name
-//         this.xp = xp
-//     }
-
-//     get name(){
-//         this._name = newName
-//     }
-
-//     set name (newName){
-//         this._name = newName
-//     }
-
-//     gainXp(amount){
-//         this.xp += amount
-//     }
-// }
-
-// class Warrior extends Hero{
-//     constructor(_name, xp, weapon){
-//         super(_name, xp)
-//         this.weapon = weapon
-//     }
-
-//     attack(){
-//         console.log(`${this._name} атакует используя ${this.weapon}`)
-//     }
-// }
-
-// const mango = new Warrior ('Mango','1000','Allibarda')
-
-// console.log(mango)
-
-// const animal = {
-//     name: 'Animal',
-//     age: 5,
-//     hasTail: true,
-// }
-
-// class Animal{
-
-//     constructor(options){
-//         this.name = options.name
-//         this.age = options.age
-//         this.hasTail = options.hasTail
-//     }
-
-//     voice(){
-//         console.log('Hey')
-//     }
-// }
-
-// const animal = new Animal({
-//         name: 'Animal',
-//         age: 5,
-//         hasTail: true,
+// numbers.forEach(function(element, index, array){
+//     console.log(element)
+//     console.log(index)
+//     console.log(array)
 // })
 
-// console.log(animal)
+// const numbersMap = numbers.map(function(element, index, array){
+//     console.log(element)
+//     console.log(index)
+//     console.log(array)
 
-// animal.voice()
-
-// class Cat extends Animal{
-//     static type = 'CAT'
-
-//     constructor(options){
-//         super(options)
-//         this.color = options.color
-//     }
-
-//     get ageInfo(){
-//         return this.age * 5
-//     }
-
-//     set ageInfo(newAge){
-//         this.age = newAge
-//     }
-// }
-
-// const cat = new Cat({
-//         name: 'Cat',
-//         age: 3,
-//         hasTail: true,
-//         color:'black',
+//     return element*2
 // })
 
-// cat.voice()
+// console.log(numbersMap)
 
-// console.log(cat)
+// const players = [
+//     {id: 'player-1', name: 'Mango', timePlayed: 310, points: '54', online: false},
+//     {id: 'player-2', name: 'Kurva', timePlayed: 410, points: '43', online: true},
+//     {id: 'player-3', name: 'Perdole', timePlayed: 510, points: '56', online: false},
+//     {id: 'player-4', name: 'Huenstvo', timePlayed: 450, points: '70', online: true},
+// ]
 
-// console.log(cat.ageInfo)
+// const playerIdUpdate = 'player-3'
 
-// cat.ageInfo = 5
+// const updatePlayers = players.find((player) => player.id === playerIdUpdate)
 
-// console.log(cat.ageInfo)
+// console.table(updatePlayers);
+
+// const playersOnline = players.filter(function(player){
+//     return !player.online
+// })
+
+// console.table(playersOnline);
+
+// const playerNames = players.map(function (player) {
+//   return player.name;
+// });
+
+// console.log(playerNames);
+
+// const updatePoints = players.map(function (player) {
+//   return {
+//     ...player,
+//     points: player.points + player.points * 0.1,
+//     // /вернуться к єтому/
+//   };
+// });
+
+// console.table(updatePoints);
+
+// const playerIdUpdate = 'player-3'
+
+// const updatePlayers = players.map(function(player){
+//  if(player.id === playerIdUpdate){
+//     return{
+//         ...player,
+//         timePlayed: player.timePlayed + 50
+//     }
+//  }
+//  return player
+// })
+
+// console.table(updatePlayers);
 
 // Задание 1
-// Напиши функцию-конструктор Account, которая создает объект со свойствами login и email.
-// В prototype функции-конструктора добавь метод getInfo(), который выводит в консоль значения полей login и email объекта который его вызвал.
+// Получить массив имен всех пользователей (поле name).
 
-// const Account = function(login, email){
-//     this.login = login
-//     this.email = email
-// }
+const users = [
+  {
+    id: '701b29c3-b35d-4cf1-a5f6-8b12b29a5081',
+    name: 'Moore Hensley',
+    email: 'moorehensley@indexia.com',
+    eyeColor: 'blue',
+    friends: ['Sharron Pace'],
+    isActive: false,
+    balance: 2811,
+    skills: ['ipsum', 'lorem'],
+    gender: 'male',
+    age: 37,
+  },
+  {
+    id: '7a3cbd18-57a1-4534-8e12-1caad921bda1',
+    name: 'Sharlene Bush',
+    email: 'sharlenebush@tubesys.com',
+    eyeColor: 'blue',
+    friends: ['Briana Decker', 'Sharron Pace'],
+    isActive: true,
+    balance: 3821,
+    skills: ['tempor', 'mollit', 'commodo', 'veniam', 'laborum'],
+    gender: 'female',
+    age: 34,
+  },
+  {
+    id: '88beb2f3-e4c2-49f3-a0a0-ecf957a95af3',
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    skills: ['nulla', 'anim', 'proident', 'ipsum', 'elit'],
+    gender: 'male',
+    age: 24,
+  },
+  {
+    id: '249b6175-5c30-44c6-b154-f120923736f5',
+    name: 'Elma Head',
+    email: 'elmahead@omatom.com',
+    eyeColor: 'green',
+    friends: ['Goldie Gentry', 'Aisha Tran'],
+    isActive: true,
+    balance: 2278,
+    skills: ['adipisicing', 'irure', 'velit'],
+    gender: 'female',
+    age: 21,
+  },
+  {
+    id: '334f8cb3-eb04-45e6-abf4-4935dd439b70',
+    name: 'Carey Barr',
+    email: 'careybarr@nurali.com',
+    eyeColor: 'blue',
+    friends: ['Jordan Sampson', 'Eddie Strong'],
+    isActive: true,
+    balance: 3951,
+    skills: ['ex', 'culpa', 'nostrud'],
+    gender: 'male',
+    age: 27,
+  },
+  {
+    id: '150b00fb-dd82-427d-9faf-2879ea87c695',
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: ['Jacklyn Lucas', 'Linda Chapman'],
+    isActive: false,
+    balance: 1498,
+    skills: ['non', 'amet', 'ipsum'],
+    gender: 'male',
+    age: 38,
+  },
+  {
+    id: 'e1bf46ab-7168-491e-925e-f01e21394812',
+    name: 'Sheree Anthony',
+    email: 'shereeanthony@kog.com',
+    eyeColor: 'brown',
+    friends: ['Goldie Gentry', 'Briana Decker'],
+    isActive: true,
+    balance: 2764,
+    skills: ['lorem', 'veniam', 'culpa'],
+    gender: 'female',
+    age: 39,
+  },
+];
 
-// Account.prototype.getInfo = function(){
+//   const getUserNames = (array) => {
+//     return  users.map((user) => user.name);
+//   }
 
-//     console.log('Login:',this.login, 'Emeil: ', this.email)
-// }
+// const getUserNames = users.map(user => {
+//     return user.name
+//     // твой код
+//   });
 
-// // console.log(Account.prototype.getInfo); // function
+//   console.log(getUserNames(users));
+// [ 'Moore Hensley', 'Sharlene Bush', 'Ross Vazquez', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony' ]
 
-// const mango = new Account('Mangozedog', 'mango@dog.woof');
-
-// // const mango = new Account({
-// //   login: 'Mangozedog',
-// //   email: 'mango@dog.woof',
-// // });
-
-// console.log(mango)
-// mango.getInfo(); // Login: Mangozedog, Email: mango@dog.woof
-
-// const poly = new Account({
-//   login: 'Poly',
-//   email: 'poly@mail.com',
-// });
-
-// poly.getInfo(); // Login: Poly, Email: poly@mail.com
-
-// ========================================================================================
-// ========================================================================================
+//   ==============================================================================================
+//   ==============================================================================================
 
 // Задание 2
-// Напиши класс User для создания пользователя со следующим свойствами:
-// name - строка
-// age - число
-// followers - число
-// Добавь метод getInfo(), который, выводит строку: User ${имя} is ${возраст} years old and has ${кол-во фоловеров} followers
+// Получить массив объектов пользователей по цвету глаз (поле eyeColor).
 
-// class User {
-//   constructor(user) {
-//     this.name = user.name;
-//     this.age = user.age;
-//     this.followers = user.followers;
-//   }
+// const getUsersWithEyeColor = users.filter(user => user.eyeColor === 'blue');
 
-//   getInfo() {
-//     console.log(
-//       `User ${this.name} is ${this.age} years old and has ${this.followers} followers`,
-//     );
-//   }
-// }
+const getUsersWithEyeColor = (array, color) => {
+  return array.filter(user => user.eyeColor === color);
+};
 
-// const mango = new User({
-//   name: 'Mango',
-//   age: 2,
-//   followers: 20,
-// });
+// console.log(getUsersWithEyeColor(users, 'blue'));
 
-// console.log(mango)
-
-// mango.getInfo(); // User Mango is 2 years old and has 20 followers
-
-// const poly = new User({
-//   name: 'Poly',
-//   age: 3,
-//   followers: 17,
-// });
-
-// poly.getInfo(); // User Poly is 3 years old and has 17 followers
-
-// ========================================================================================
-// ========================================================================================
+//   ==============================================================================================
+//   ==============================================================================================
 
 // Задание 3
-// Напиши класс Storage, который будет создавать объекты для управления складом товаров. При вызове будет получать один аргумент
-// - начальный массив товаров, и записывать его в свойство items.
+// Получить массив имен пользователей по полу (поле gender).
 
-// Добавь методы класса:
+// arr.filter(user => user.gender === 'male').map(user => user.name)
 
-// getItems() - возвращает массив текущих товаров
-// addItem(item) - получает новый товар и добавляет его к текущим
-// removeItem(item) - получет товар и, если он есть, удаляет его из текущих
+// const getUsersWithGender = (array, gender) =>
+// array.filter(user => user.gender === gender)
+// .map(user => user.name)
 
-// class Storage {
-//     constructor(goods) {
-//         this.items = goods;
+// console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
 
-//     }
+//   ==============================================================================================
+//   ==============================================================================================
 
-//     getItems(){
-//         return this.items
-//     }
+// Задание 4
+// Получить массив только неактивных пользователей (поле isActive).
 
-//     addItem(item){
-//         this.items.push(item)
-//     }
+const getInactiveUsers = array => {
+  return array.filter(user => !user.isActive);
+};
 
-//     removeItem(item){
-//       this.items = this.items.filter(good => good !== item)
-//     }
-// }
+// console.log(getInactiveUsers(users)); // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
 
-// const storage = new Storage([
-//     'Нанитоиды',
-//     'Пролонгер',
-//     'Железные жупи',
-//     'Антигравитатор',
-//   ]);
-
-// //   console.log(storage)
-
-//   const items = storage.getItems();
-//   console.table(items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор" ]
-
-//   storage.addItem('Дроид');
-//   console.table(storage.items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор", "Дроид" ]
-
-//   storage.removeItem('Пролонгер');
-//   console.table(storage.items); // [ "Нанитоиды", "Железные жупи", "Антигравитатор", "Дроид" ]
-
-// ========================================================================================
-// ========================================================================================
-
-// Задача 4
-
-// Напиши класс StringBuilder. На вход он получает один параметр - строку, которую записывает в свойство _value.
-
-// Добавь классу следующий функционал:
-
-// Геттер value - возвращает текущее значение поля _value
-// Метод append(str) - получает парметр str (строку) и добавляет ее в конец _value
-// Метод prepend(str) - получает парметр str (строку) и добавляет ее в начало _value
-// Метод pad(str) - получает парметр str (строку) и добавляет ее в начало и в конец _value
-
-// class StringBuilder{
-//     constructor(str){
-//         this._value = str
-//     }
-
-//     get value(){
-//         return this._value
-//     }
-
-//     append(str){
-//         this._value = this._value + str
-//     }
-
-//     prepend(str){
-//         this._value = str + this._value
-//     }
-//     pad(str){
-//         this._value = str + this._value + str
-//     }
-
-// }
-// const builder = new StringBuilder('.');
-
-// builder.append('^');
-// console.log(builder.value); // '.^'
-
-// builder.prepend('^');
-// console.log(builder.value); // '^.^'
-
-// builder.pad('=');
-// console.log(builder.value); // '=^.^='
-
-// ========================================================================================
-// ========================================================================================
+//   ==============================================================================================
+//   ==============================================================================================
 
 // Задание 5
-// Напиши класс Car с указанными свойствами и методами.
+// Получить пользоваля (не массив) по email (поле email, он уникальный).
 
-class Car {
-  static getSpecs(car) {
-    console.log(car.maxSpeed, car.speed, car.isOn, car.distance, car.price);
-  }
+const getUserWithEmail = (array, email) => {
+  return array.find(user => user.email === email);
+};
 
-  /*
-   * Добавь статический метод `getSpecs(car)`,
-   * который принимает объект-машину как параметр и выводит
-   * в консоль значения свойств maxSpeed, speed, isOn, distance и price.
-   */
+// console.log(getUserWithEmail(users, 'shereeanthony@kog.com')); // {объект пользователя Sheree Anthony}
+// console.log(getUserWithEmail(users, 'elmahead@omatom.com')); // {объект пользователя Elma Head}
 
-  constructor(car) {
-    (this.maxSpeed = car.maxSpeed),
-      (this.speed = 0),
-      (this._price = car.price),
-      (this.isOn = false),
-      (this.distance = 0);
-  }
-  /*
-   * Конструктор получает объект настроек.
-   *
-   * Добавь свойства будущеего экземпляра класса:
-   *  speed - текущая скорость, изначально 0
-   *  price - цена автомобиля
-   *  maxSpeed - максимальная скорость
-   *  isOn - заведен ли автомобиль, значения true или false. Изначально false
-   *  distance - общий киллометраж, изначально 0
-   */
-  get price() {
-    return this._price;
-  }
+//   ==============================================================================================
+//   ==============================================================================================
 
-  set price(newPrice) {
-    this._price = newPrice;
-  }
+// Задание 6
+// Получить массив пользователей попадающих в возрастную категорию от min до max лет (поле age).
 
-  /*
-   * Добавь геттер и сеттер для свойства price,
-   * который будет работать с свойством цены автомобиля.
-   */
+const getUsersWithAge = (array, min, max) => {
+  return array.filter(user => user.age > min && user.age < max);
+};
 
-  /*
-   * Добавь код для того чтобы завести автомобиль
-   * Записывает в свойство isOn значение true
-   */
-  turnOn() {
-    this.isOn = true;
-  }
+// console.log(getUsersWithAge(users, 20, 30)); // [объект Ross Vazquez, объект Elma Head, объект Carey Barr]
 
-  /*
-   * Добавь код для того чтобы заглушить автомобиль
-   * Записывает в свойство isOn значение false,
-   * и сбрасывает текущую скорость в 0
-   */
-  turnOff() {
-    (this.isOn = false), (this.speed = 0);
-  }
+// console.log(getUsersWithAge(users, 30, 40));
+// [объект Moore Hensley, объект Sharlene Bush, объект Blackburn Dotson, объект Sheree Anthony]
 
-  /*
-   * Добавялет к свойству speed полученное значение,
-   * при условии что результирующая скорость
-   * не больше чем значение свойства maxSpeed
-   */
-  accelerate(value) {
-    if (this.speed + value < this.maxSpeed) {
-      this.speed += value;
+//   ==============================================================================================
+//   ==============================================================================================
+
+// Задание 7
+// Получить общую сумму баланса (поле balance) всех пользователей.
+
+// const calculateTotalBalance = array => {
+//   array.reduce((allBalance, user) => {
+//     allBalance += user.balance
+//     return allBalance
+//   }, 0)
+// };
+const us = users.reduce((allBalance, user) => {
+  // allBalance += user.balance
+  return (allBalance += user.balance);
+}, 0);
+//   console.log(us);
+// console.log(calculateTotalBalance(us)); // 20916
+
+//   ==============================================================================================
+//   ==============================================================================================
+
+// Задание 8
+// Массив имен всех пользователей у которых есть друг с указанным именем.
+
+const getUsersWithFriend = (array, friendName) => {
+  return array.map(user => {
+    if (user.friends.includes(friendName)) {
+      return user.name;
     }
+  });
+};
+
+// console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
+// console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
+
+//   ==============================================================================================
+//   ==============================================================================================
+
+// Задание 9
+// Массив имен (поле name) людей, отсортированных в зависимости от количества их друзей (поле friends)
+
+const getNamesSortedByFriendsCount = users => {
+  function compareNumeric(a, b) {
+    if (a.friends.length > b.friends.length) return 1;
+    if (a.friends.length == b.friends.length) return 0;
+    if (a.friends.length < b.friends.length) return -1;
   }
 
-  /*
-   * Отнимает от свойства speed полученное значение,
-   * при условии что результирующая скорость не меньше нуля
-   */
-  decelerate(value) {
-    if (this.speed - value > 0) {
-      this.speed -= value;
-    }
-  }
+  const sortedUsers = users.sort(compareNumeric).map(user => user.name);
 
-  /*
-   * Добавляет в поле distance киллометраж (hours * speed),
-   * но только в том случае если машина заведена!
-   */
-  drive(hours) {
-    if (this.isOn) {
-      this.distance = hours * this.speed + this.distance;
-    }
-  }
-}
+  return sortedUsers;
+};
 
-const mustang = new Car({ maxSpeed: 200, price: 2000 });
+console.log(getNamesSortedByFriendsCount(users));
+// [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
 
-mustang.turnOn();
-mustang.accelerate(50);
-mustang.drive(2);
+//   ==============================================================================================
+//   ==============================================================================================
 
-// Car.getSpecs(mustang);
-// // maxSpeed: 200, speed: 50, isOn: true, distance: 100, price: 2000
+// Задание 10
+// Получить массив всех умений всех пользователей (поле skills), при этом не должно быть повторяющихся умений и они должны быть отсортированы в алфавитном порядке.
 
-mustang.decelerate(20);
-mustang.drive(1);
-mustang.turnOff();
-console.log(mustang);
+// const getSortedUniqueSkills = users => {
+//     return users.reduce((acc, user)=> {
+//         const seachSkills = user.skills.map(skill => {
+//            if(!acc.includes(skill)){
+//                  return skill
+//              }
+//         }).filter(skill => skill)
 
-// Car.getSpecs(mustang);
-// // maxSpeed: 200, speed: 0, isOn: false, distance: 130, price: 2000
+//            return [...acc, ...seachSkills].sort()
+//        }, [])
 
-// console.log(mustang.price); // 2000
-// mustang.price = 4000;
-// console.log(mustang.price); // 4000
+// };
+
+const getSortedUniqueSkills = users => {};
+
+console.log(getSortedUniqueSkills(users));
+// [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
