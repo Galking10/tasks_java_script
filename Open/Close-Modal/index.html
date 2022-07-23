@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./modal.css" rel="stylesheet" />
+  <title>Document</title>
+</head>
+<body>
+  <h1>Слушатель событий</h1>
+  <p></p>
+  <button class="js-target-btn">Целевая кнопка</button>
+  <button class="js-add-listener">Добавить слушателя</button>
+  <button class="js-remove-listener">Снять слушателя</button>
+  
+
+  <h1>События сабмита формы</h1>
+  <p></p>
+  Событие сабмита формы
+  <form class="js-register-form">
+    <div role="group">
+      <label >Имя</label>
+      <input type="text" name="name" id="name" />
+      <label >Email</label>
+      <input type="text" name="email" id="name" />
+      <label >Password</label>
+      <input type="text" name="password" id="name" />
+    </div>
+    <br>
+    <div role="group">
+     <p>Выбрать тип подписки: </p>
+      <label for="policy" class="form_policy">Free</label>
+          <input type="radio" name="subscription" value="free">
+          <label for="policy" class="form_policy">Basic</label>
+          <input type="radio" name="subscription" value="basic">
+          <label for="policy" class="form_policy">Premium</label>
+          <input type="radio" name="subscription" value="premium">
+    </div>
+    <br>
+    <button type="submit" >Зарегистрироваться</button>
+    <br>
+    <button class="open_modal" type="submit" >Open Modal</button>
+
+  </form>
+  <p id="test1"></p>
+  <p id="test2"></p>
+  <p id="test3"></p>
+  <div class="backdrope js-backdrop">
+    <div class="modal">
+      <h2>Modal window</h2>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio eligendi reiciendis nemo natus ratione possimus exercitationem molestias excepturi, ut praesentium iste nobis eum fugit veritatis at, necessitatibus alias? Quas, totam?</p>
+      <button class="close_modal" type="submit" >Close</button>
+    </div>
+  </div>
+  <script src="./index.js"></script>
+</body>
+</html>
