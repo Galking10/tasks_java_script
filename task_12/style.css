@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@700&family=Oleo+Script&family=Raleway:wght@700&family=Roboto:wght@300&display=swap');
+
+body {
+  width: 100%;
+  font-family: 'Raleway', sans-serif;
+  background-color: aqua;
+}
+
+.head {
+  width: 100%;
+  height: 160px;
+  background-color: lightcoral;
+  display: flex;
+  justify-content: center;
+}
+
+.input_menu {
+  width: 268px;
+  padding-top: 100px;
+}
+
+input {
+  font-family: 'Roboto', sans-serif;
+  width: 200px;
+  height: 20px;
+  border-radius: 100px 0 0 100px;
+  border: 0;
+  padding: 0;
+  background-color: rgb(238, 243, 245);
+}
+
+input::placeholder{
+    padding-left: 15px;
+    font-size: 10px;
+}
+
+input:focus {
+  background-color: white;
+  outline: 1px solid rgb(141, 192, 209);
+}
+
+button {
+  font-family: 'Raleway', sans-serif;
+  width: 60px;
+  height: 20px;
+  background-color: dodgerblue;
+  color: white;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  border-radius: 0 100px 100px 0;
+}
+
+.list {
+  width: 1700px;
+  background-color: aquamarine;
+  padding: 0 auto;
+}
+
+.outside_ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list_item {
+  width: 500px;
+  height: 500px;
+  background-color: rgb(228, 222, 222);
+}

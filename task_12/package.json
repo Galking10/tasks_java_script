@@ -1,0 +1,22 @@
+{
+  "name": "first",
+  "version": "1.0.0",
+  "description": "homework_12",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Galking10/tasks_java_script.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Galking10/tasks_java_script/issues"
+  },
+  "homepage": "https://github.com/Galking10/tasks_java_script#readme",
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
